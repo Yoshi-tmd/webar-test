@@ -81,19 +81,19 @@
 
       <!-- 3DCGモデルを読み込む / カムロボ -->
       <a-assets>
-        <a-asset-item id="camrobo" src="./assets/comrobo2.glb"></a-asset-item>
+        <a-asset-item id="camrobo" src="./assets/comrobo2_ver3.glb"></a-asset-item>
       </a-assets>
 
       <!-- マーカーの.pattファイルを読み込む  / 大会ロゴ -->
       <a-marker type="pattern" url="./assets/logo-QR.patt">
         <!-- 3Dモデルを呼び出す -->
-        <a-entity gltf-model="#3d-logo" position="0 5 0"></a-entity>
+        <a-entity gltf-model="#3d-logo"></a-entity>
       </a-marker>
 
       <!-- マーカーの.pattファイルを読み込む / カムロボ -->
       <a-marker type="pattern" url="./assets/camrrobo-QR.patt">
         <!-- 3Dモデルを呼び出す -->
-        <a-entity gltf-model="#camrobo" position="0 0 0" width="0.5" height="0.5"></a-entity>
+        <a-entity gltf-model="#camrobo"></a-entity>
       </a-marker>
 
 
