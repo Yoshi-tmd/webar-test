@@ -74,16 +74,29 @@
     <!-- A-FrameにAR.jsを紐づけ、VRボタン非表示、深度バッファ追加 -->
     <a-scene embedded arjs vr-mode-ui="enabled: false;" renderer="logarithmicDepthBuffer: true;">
 	    
-      <!-- 3DCGモデルを読み込む -->
+      <!-- 3DCGモデルを読み込む / 大会ロゴ -->
       <a-assets>
         <a-asset-item id="3d-logo" src="./assets/mechchan2024autume_3d-logo.glb" position="0 0 -5"></a-asset-item>
       </a-assets>
 
-      <!-- マーカーの.pattファイルを読み込む -->
+      <!-- 3DCGモデルを読み込む / カムロボ -->
+      <a-assets>
+        <a-asset-item id="camrobo" src="./assets/comrobo2.glb" position="0 0 -5"></a-asset-item>
+      </a-assets>
+
+      <!-- マーカーの.pattファイルを読み込む  / 大会ロゴ -->
       <a-marker type="pattern" url="./assets/logo-QR.patt">
         <!-- 3Dモデルを呼び出す -->
         <a-entity gltf-model="#3d-logo"></a-entity>
       </a-marker>
+      
+      <!-- マーカーの.pattファイルを読み込む / カムロボ -->
+      <a-marker type="pattern" url="./assets/camrrobo-QR.patt">
+        <!-- 3Dモデルを呼び出す -->
+        <a-entity gltf-model="#camrobo"></a-entity>
+      </a-marker>
+
+
 
       <!-- カメラを追加 -->
       <a-entity camera></a-entity>
