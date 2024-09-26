@@ -11,7 +11,7 @@
     <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
-    <title>3Dロゴ テスト</title>
+    <title>3Dカムロボ テスト</title>
   </head>
   <style>
       .material-symbols-outlined {
@@ -76,13 +76,13 @@
 	    
       <!-- 3DCGモデルを読み込む -->
       <a-assets>
-        <a-asset-item id="3d-logo" src="./assets/mechchan2024autume_3d-logo.glb" position="0 0 -5"></a-asset-item>
+        <a-asset-item id="camrobo" src="./assets/camrobo.2glb" position="0 0 -5"></a-asset-item>
       </a-assets>
 
       <!-- マーカーの.pattファイルを読み込む -->
-      <a-marker type="pattern" url="./assets/logo-QR.patt">
+      <a-marker type="pattern" url="./assets/camrrobo-QR.patt">
         <!-- 3Dモデルを呼び出す -->
-        <a-entity gltf-model="#3d-logo"></a-entity>
+        <a-entity gltf-model="#camrobo"></a-entity>
       </a-marker>
 
       <!-- カメラを追加 -->
