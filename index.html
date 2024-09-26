@@ -82,9 +82,9 @@
     </a-scene>
     <div class="ui">
       <img id="snap">
-      <a href="#" id="delete-photo" title="Delete Photo" class="disabled"><i class="material-icons">delete</i></a>
-      <a href="" id="take-photo" title="Take Photo"><i class="material-icons">photo_camera</i></a>
-      <a href="#" id="download-photo" download="selfie.png" title="Save Photo" class="disabled" target="_blank"><i class="material-icons">file_download</i></a>
+      <a href="#" id="delete-photo" title="Delete Photo" class="disabled"><i class="material-icons"></i></a>
+      <a href="" id="take-photo" title="Take Photo"><i class="material-icons"></i></a>
+      <a href="#" id="download-photo" download="selfie.png" title="Save Photo" class="disabled" target="_blank"><i class="material-icons"></i></a>
   </div>
   </body>
   <script>
@@ -134,6 +134,8 @@
         var height = video.videoHeight;
         var aScene = document.querySelector("a-scene").components.screenshot.getCanvas("perspective");
 
+        var acceseDay = getDateSever();
+
         if (width && height) {
             //videoのサイズをキャンバスにセット
             resizedCanvas.width = width;
@@ -152,8 +154,23 @@
                 var marginLeft = (width - scaledWidth) / 2;
                 resizedContext.drawImage(aScene, marginLeft, 0, scaledWidth, height);
             }
-            return resizedCanvas.toDataURL('image/png');
+            return resizedCanvas.toDataURL('image'+ acceseDay[0] + "_" + acceseDay[1] +'/png');
         }
+    }
+    // 日付データを準備する関数
+    function getDateSever(){
+        let dt = new Date();
+        let year = dt.getFullYear();
+        let manth = dt.getMonth()+1;
+        let date = dt.getDate();
+        let Hour = dt.getHours().toString().padStart(2, '0');
+        let Min = dt.getMinutes().toString().padStart(2, '0');
+        let Sec = dt.getSeconds().toString().padStart(2, '0');
+        
+        let editorDay = year + "/" + manth + "/" + date;
+        let editorTime = Hour + ":" + Min + ":" + Sec;
+        
+        return [editorDay, editorTime];
     }
 
     //-->
